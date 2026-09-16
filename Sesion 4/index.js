@@ -2,7 +2,7 @@
 fetch("https://randomuser.me/api/")
 .then(response => response.json())
 .then(data => console.log(data))
-*/
+
 
 setTimeout(
 () => {
@@ -12,10 +12,32 @@ setTimeout(
     1000
 );
 
-console.log("Holitas 2");
-let j = 1;
-for (let i = 1; i<=2000000000; i++)
+*/
+
+let promesa = new Promise( (resolve, reject )=>{
+    let edad = 18;
+    if (edad >=18)
+        {
+           setTimeout( ()=>
+           {
+              resolve("Puede Votar");
+           },5000
+            )        
+        }
+    else
+        {
+        reject("No puede Votar");
+        }
+    }   
+)
+
+function muestraestadopromesa()
 {
-j=i;
-}
+    console.log(promesa);
+}  
+console.log(promesa);
+promesa
+.then( respuesta => {console.log(respuesta)})
+.catch( errorpromesa => {console.log(errorpromesa)});  
+
 
