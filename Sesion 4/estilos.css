@@ -1,0 +1,12 @@
+.tablas{
+    border-collapse: collapse;      
+    color: red;    
+}
+
+th,td {
+border:2px solid pink;
+} 
+
+td{
+    color: blue;
+}
