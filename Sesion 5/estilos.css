@@ -1,0 +1,47 @@
+/*
+.contenedor
+{
+    height: 500px;
+    width: 500px;
+    border: solid 2px red;
+    display:flex;
+    flex-direction:row;
+    justify-content:end;
+    align-items: start;
+    gap: 2px;
+    flex-wrap:wrap;
+}
+*/
+.contenedor
+{
+    height: 500px;
+    width: 500px;
+    border: solid 2px red;
+    display:grid;
+    grid-template-columns:  1fr;
+
+}
+
+
+.elemento
+{
+    height: 50px;
+    width: 50px;
+    border: solid 2px blue
+}
+
+@media (min-width: 300px)
+{
+   .contenedor
+    {    
+    grid-template-columns:  1fr 1fr;
+    } 
+}
+
+@media (min-width: 500px)
+{
+   .contenedor
+    {    
+    grid-template-columns:  repeat(3, 1fr);
+    } 
+}

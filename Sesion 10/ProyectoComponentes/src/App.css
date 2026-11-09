@@ -1,0 +1,104 @@
+
+/* Estilos generales */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;   
+}
+
+#root {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Encabezado */
+header {
+    background-color: #2563eb;
+    color: white;
+    text-align: center;
+    padding: 25px;
+}
+
+/* Navegación */
+nav {
+    background-color: #1e293b;
+    padding: 10px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin: 0;
+    padding: 0;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+}
+
+nav a:hover {
+    color: #93c5fd;
+}
+
+/* Distribución del contenido */
+.contenedor {
+    display: flex;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+/* Contenido principal */
+main {
+    flex: 3;
+    background-color: white;
+    padding: 25px;
+    border-radius: 8px;
+}
+
+section,
+article {
+    margin-bottom: 25px;
+}
+
+/* Barra lateral */
+aside {
+    flex: 1;
+    background-color: #e2e8f0;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+aside a {
+    color: #1d4ed8;
+}
+
+/* Pie de página */
+footer {
+    background-color: #1e293b;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+/* Diseño adaptable a móviles */
+@media (max-width: 700px) {
+    .contenedor {
+        flex-direction: column;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+}

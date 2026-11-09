@@ -1,27 +1,41 @@
 import { useEffect, useState } from "react"
-import {obtenerProductos} from "../services/productoService"
+import {obtenerProductos,agregarProductos,eliminarProductos} from "../services/productoService"
 import CardProducto from "./CardProducto";
+import FormularioProducto from "./FormularioProducto";
 export default function CatalogoProductos()
 {
    const [data, setData] = useState([]);
 
-    useEffect(
-        ()=>
-        {
-            async function cargarProductos()
+   async function cargarProductos()
             {
                 const datos = await obtenerProductos();
+                console.log(datos);
                 setData(datos.data);                 
             }
-            cargarProductos();
 
+   async function agregarProducto(producto)
+   {
+      await agregarProductos(producto);
+      await cargarProductos();
+   }
+
+   async function eliminarproducto(id)
+   {
+        await eliminarProductos(id);
+        await cargarProductos();     
+   }
+
+    useEffect(
+        ()=>
+        {           
+            cargarProductos();
         }        
         ,[]
     )
 
     return(
         <>
-        
+        <FormularioProducto guardar={agregarProducto} />
         <h2>Listado de Productos</h2>
         <div className="products-container">
         {
@@ -32,7 +46,8 @@ export default function CatalogoProductos()
              category = {e.category}
              name = {e.name} 
              stock = {e.stock}
-             imageUrl = {e.imageUrl}            
+             imageUrl = {e.imageUrl}  
+             eliminar={eliminarproducto}         
             />
             
             )

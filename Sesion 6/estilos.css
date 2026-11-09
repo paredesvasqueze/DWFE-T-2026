@@ -1,0 +1,75 @@
+input[type="email"] {
+border: 2px solid red;
+}
+/*
+a[target="_blank"] {
+font-weight: bold;
+}*/
+
+input[disabled] {
+background: green;
+border: 2px solid pink;
+}
+
+input[required] {
+background: yellow;
+}
+
+.conten > a {
+    color:chocolate;
+}
+
+h2 + p {
+    color: green;
+    font-weight: bold;
+}
+
+
+.boton:hover,
+ .boton:focus {
+transform: scale(1.05);
+border: 2px solid red;
+}
+/*
+li:first-child
+{
+    color:coral
+}
+
+li:last-child
+{
+    color:cyan
+}
+*/
+li:nth-child(even)
+{
+    color:cadetblue
+}
+
+article:nth-child(even)
+{
+    color:bisque
+}
+
+.menu a:not(.activo) {
+color: aquamarine;
+}
+
+.menu a:is(.activo2) {
+color:blue;
+}
+
+
+:is(h1,h2){
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.boton::after {
+content: "★ ";
+}
+
+p::first-letter {
+font-size: 2rem;
+font-weight: bold;
+color: chartreuse;
+}

@@ -1,0 +1,239 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portal Académico IESP Trujillo</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f2f2f4;
+      color: #292929;
+      line-height: 1.6;
+    }
+
+    /* COMPONENTE 1: HEADER */
+    header {
+      background: #801127;
+      color: white;
+      padding: 25px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 30px;
+      margin-bottom: 5px;
+    }
+
+    /* COMPONENTE 2: NAV */
+    nav {
+      background: #5b0c1c;
+      padding: 14px;
+      text-align: center;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 18px;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    /* COMPONENTE 3: MAIN */
+    main {
+      background: white;
+      padding: 25px;
+      border-radius: 8px;
+      grid-area: main;
+    }
+
+    main h2 {
+      color: #801127;
+      margin-bottom: 12px;
+    }
+
+    .curso {
+      background: #f8edf0;
+      border-left: 5px solid #801127;
+      padding: 15px;
+      margin-top: 15px;
+    }
+
+    .curso h3 {
+      margin-bottom: 5px;
+    }
+
+    /* COMPONENTE 4: ASIDE */
+    aside {
+      background: white;
+      padding: 22px;
+      border-radius: 8px;
+      grid-area: aside;
+    }
+
+    aside h2 {
+      color: #801127;
+      margin-bottom: 12px;
+    }
+
+    aside ul {
+      padding-left: 20px;
+    }
+
+    aside li {
+      margin-bottom: 10px;
+    }
+
+    /* DISTRIBUCIÓN DEL MAIN Y ASIDE SIN DIV CONTENEDOR */
+    body {
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(220px, 1fr);
+      grid-template-areas:
+        "header header"
+        "nav nav"
+        "main aside"
+        "footer footer";
+      gap: 20px;
+      padding-bottom: 20px;
+    }
+
+    header {
+      grid-area: header;
+    }
+
+    nav {
+      grid-area: nav;
+    }
+
+    main,
+    aside {
+      margin: 0 0 0 20px;
+    }
+
+    aside {
+      margin-left: 0;
+      margin-right: 20px;
+    }
+
+    /* COMPONENTE 5: FOOTER */
+    footer {
+      background: #5b0c1c;
+      color: white;
+      padding: 22px;
+      text-align: center;
+      grid-area: footer;
+    }
+
+    /* DISEÑO RESPONSIVE */
+    @media (max-width: 700px) {
+      body {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+          "header"
+          "nav"
+          "main"
+          "aside"
+          "footer";
+      }
+
+      main,
+      aside {
+        margin: 0 15px;
+      }
+
+      nav a {
+        display: inline-block;
+        margin: 5px 8px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+
+  <header>
+    <h1>Portal Académico</h1>
+    <p>Instituto de Educación Superior Público "TRUJILLO"</p>
+  </header>
+
+
+  <nav>
+    <a href="#inicio">Inicio</a>
+    <a href="#cursos">Cursos</a>
+    <a href="#noticias">Noticias</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
+
+
+  <main id="inicio">
+    <h2>Bienvenidos al portal académico</h2>
+
+    <p>
+      Encuentra información sobre nuestros cursos,
+      actividades académicas y oportunidades de aprendizaje.
+    </p>
+
+    <section id="cursos">
+      <h2 style="margin-top: 20px;">Nuestros cursos</h2>
+
+      <article class="curso">
+        <h3>Desarrollo Web Front End</h3>
+        <p>Aprende HTML, CSS, JavaScript y React.</p>
+      </article>
+
+      <article class="curso">
+        <h3>Fundamentos de Programación</h3>
+        <p>Desarrolla tu lógica mediante JavaScript.</p>
+      </article>
+
+      <article class="curso">
+        <h3>Fundamentos de Bases de Datos</h3>
+        <p>Diseña bases de datos y realiza consultas SQL.</p>
+      </article>
+    </section>
+  </main>
+
+ 
+  <aside id="noticias">
+    <h2>Noticias</h2>
+
+    <ul>
+      <li>Inicio de las actividades académicas.</li>
+      <li>Inscripciones para los talleres tecnológicos.</li>
+      <li>Presentación de proyectos estudiantiles.</li>
+    </ul>
+
+    <h2 style="margin-top: 20px;">Enlaces útiles</h2>
+
+    <ul>
+      <li>
+        <a href="https://iesptrujillo.edu.pe/">
+          Portal institucional
+        </a>
+      </li>
+      <li><a href="#cursos">Consultar cursos</a></li>
+    </ul>
+  </aside>
+
+
+  <footer id="contacto">
+    <p>IESP "TRUJILLO" © 2026</p>
+    <p>Programa de Estudios: Diseño y Programación Web</p>
+    <p>Todos los derechos reservados.</p>
+  </footer>
+
+</body>
+</html>

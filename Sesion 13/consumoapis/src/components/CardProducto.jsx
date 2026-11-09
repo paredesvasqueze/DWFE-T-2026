@@ -1,5 +1,5 @@
 export default function CardProducto({
-    id,category,name,stock,imageUrl
+    id,category,name,stock,imageUrl,eliminar
 })
 {
  return (
@@ -18,6 +18,8 @@ export default function CardProducto({
       <button className="product-btn">Ver más</button>
     </div>
   </div>
+  <button onClick={()=>{eliminar(id)}} >Eliminar</button>
+
 </div>
 
  )

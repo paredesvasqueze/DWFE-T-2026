@@ -1,0 +1,23 @@
+ p { /*0,0,1*/
+      color: black ; 
+    }
+
+    .texto { /*0,1,0*/
+      color: blue;
+    }
+
+    #especial { /*1,0,0*/
+      color: red;
+    }
+
+    div p { /*0,0,2*/
+      color: green;
+    }
+
+    .contenedor .texto { /*0,2,0*/
+      color: purple;
+    }
+
+     .texto { /*0,1,0*/
+      color: yellow;
+    }

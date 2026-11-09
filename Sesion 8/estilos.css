@@ -1,0 +1,67 @@
+.productos {
+display: flex;
+gap: clamp(12px, 2vw, 24px);
+height: 50px;
+flex-wrap: wrap;
+}
+
+.producto {
+flex: 1 1 240px;
+background: red;
+height: 40px;
+}
+
+
+.pruebaclamp
+{
+    font-size: clamp(2rem, 5vw, 2.5rem );
+}
+
+.contenedormaximo {
+width: max(90%, 500px);
+height: 100px;
+margin: 0 auto;
+background: pink;
+}
+
+.otrocontenedor {
+width: min(90%, 500px);
+height: 100px;
+margin: 0 auto;
+background: yellowgreen;
+}
+
+.maestro{
+width: 200px;
+height: 200px;
+border: 10px solid red;
+padding: 20px;
+margin: 10px;
+box-sizing: content-box;
+}
+
+.contenedor{
+width: calc(100% - 40px);
+}
+
+
+.parrafo{
+   font-size: 1rem; 
+}
+
+.parrafopequeno
+{
+    font-size: 0.75rem; 
+}
+
+.padre{
+    font-size: 10vw;
+}
+
+.hijo{
+   font-size: 0.5em;  
+}
+
+.nieto{
+    font-size: 0.5em;
+}
