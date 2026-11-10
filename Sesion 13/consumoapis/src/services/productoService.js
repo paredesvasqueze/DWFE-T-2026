@@ -35,6 +35,5 @@ export async function eliminarProductos(id) {
     if (!response.ok) {
         throw new Error("Error al eliminar producto");
     }
-    return await response.json();
-  
+    return await response.json();  
 }

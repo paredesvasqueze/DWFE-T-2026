@@ -5,6 +5,16 @@ import FormularioProducto from "./FormularioProducto";
 export default function CatalogoProductos()
 {
    const [data, setData] = useState([]);
+   const [productoEditar, setProductoEditar] = useState(
+        {
+            id: 0,
+            category: "",
+            name: "",
+            stock: 0,
+            imageUrl: ""  
+        }
+
+   );
 
    async function cargarProductos()
             {
@@ -25,6 +35,12 @@ export default function CatalogoProductos()
         await cargarProductos();     
    }
 
+   function enviarValorFormulario(producto)
+   {
+        setProductoEditar(producto);
+   }
+
+
     useEffect(
         ()=>
         {           
@@ -35,7 +51,7 @@ export default function CatalogoProductos()
 
     return(
         <>
-        <FormularioProducto guardar={agregarProducto} />
+        <FormularioProducto guardar={agregarProducto} productoeditar={productoEditar} />
         <h2>Listado de Productos</h2>
         <div className="products-container">
         {
@@ -47,7 +63,8 @@ export default function CatalogoProductos()
              name = {e.name} 
              stock = {e.stock}
              imageUrl = {e.imageUrl}  
-             eliminar={eliminarproducto}         
+             eliminar={eliminarproducto} 
+             editar={enviarValorFormulario}       
             />
             
             )

@@ -1,7 +1,18 @@
 export default function CardProducto({
-    id,category,name,stock,imageUrl,eliminar
+    id,category,name,stock,imageUrl,eliminar,editar
 })
 {
+function editarProducto(){
+    editar({
+      id:id,
+      category: category,
+      name: name,
+      stock: stock,
+      imageUrl : imageUrl
+      }
+    )
+  }
+
  return (
     <div className="product-card">
   <div className="product-image-container">
@@ -19,6 +30,7 @@ export default function CardProducto({
     </div>
   </div>
   <button onClick={()=>{eliminar(id)}} >Eliminar</button>
+  <button onClick={editarProducto}>Actualizar</button>
 
 </div>
 

@@ -1,6 +1,6 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
-export default function FormularioProducto({guardar})
+export default function FormularioProducto({guardar,productoeditar})
 {
     const [formulario, setFormulario]= useState({        
       id: 0,
@@ -25,7 +25,11 @@ export default function FormularioProducto({guardar})
         guardar(formulario);
     }
 
-
+    useEffect(
+        ()=>{
+          setFormulario(productoeditar);
+        }, [productoeditar]
+    );
 
     return(
         <form onSubmit={guardarProducto} >
