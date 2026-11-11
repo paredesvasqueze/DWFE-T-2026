@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import {obtenerProductos,agregarProductos,eliminarProductos} from "../services/productoService"
+import {obtenerProductos,agregarProductos,eliminarProductos, actualizarProductos} from "../services/productoService"
 import CardProducto from "./CardProducto";
 import FormularioProducto from "./FormularioProducto";
 export default function CatalogoProductos()
@@ -25,7 +25,25 @@ export default function CatalogoProductos()
 
    async function agregarProducto(producto)
    {
-      await agregarProductos(producto);
+      console.log(producto);
+        if (producto.id>0)
+        {
+          await actualizarProductos(producto.id,producto) 
+        }
+        else
+        {
+          await agregarProductos(producto);
+        }
+
+      setProductoEditar(
+            {
+            id: 0,
+            category: "",
+            name: "",
+            stock: 0,
+            imageUrl: ""  
+        });  
+      //await agregarProductos(producto);
       await cargarProductos();
    }
 

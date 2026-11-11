@@ -8,7 +8,9 @@ export default function FormularioProducto({guardar,productoeditar})
       name: "",
       stock: 0,
       imageUrl: ""    
-    });
+    });  
+
+  
 
     function cambiarvalor(e){
         const {name,value} = e.target;  
@@ -57,7 +59,7 @@ export default function FormularioProducto({guardar,productoeditar})
             onChange={cambiarvalor}
             />
             <br/>
-            <button type="submit">Guardar</button>
+            <button type="submit">{productoeditar.id>0? "Editar": "Guardar" }</button>
        </form>
-    )
+    ) 
 }

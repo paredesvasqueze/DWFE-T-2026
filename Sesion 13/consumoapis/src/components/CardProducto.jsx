@@ -1,7 +1,19 @@
+import { useState } from "react"
+
 export default function CardProducto({
     id,category,name,stock,imageUrl,eliminar,editar
 })
 {
+
+const [mensaje, setMensaje]= useState("");
+
+async function eliminarProducto()
+{ 
+  setMensaje("Eliminando porfavor espere nmo sea electrico"); 
+  await eliminar(id); 
+  setMensaje(""); 
+}
+
 function editarProducto(){
     editar({
       id:id,
@@ -28,10 +40,10 @@ function editarProducto(){
       <span className="product-stock">Stock: <strong>{stock}</strong></span>
       <button className="product-btn">Ver más</button>
     </div>
+    <span>{mensaje}</span>
   </div>
-  <button onClick={()=>{eliminar(id)}} >Eliminar</button>
+  <button onClick={eliminarProducto}>Eliminar</button>
   <button onClick={editarProducto}>Actualizar</button>
-
 </div>
 
  )
