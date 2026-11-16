@@ -1,6 +1,6 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
-export default function FormularioProducto({guardar})
+export default function FormularioProducto({guardar,productoeditar})
 {
     const [formulario, setFormulario]= useState({        
       id: 0,
@@ -8,7 +8,9 @@ export default function FormularioProducto({guardar})
       name: "",
       stock: 0,
       imageUrl: ""    
-    });
+    });  
+
+  
 
     function cambiarvalor(e){
         const {name,value} = e.target;  
@@ -25,7 +27,11 @@ export default function FormularioProducto({guardar})
         guardar(formulario);
     }
 
-
+    useEffect(
+        ()=>{
+          setFormulario(productoeditar);
+        }, [productoeditar]
+    );
 
     return(
         <form onSubmit={guardarProducto} >
@@ -53,7 +59,7 @@ export default function FormularioProducto({guardar})
             onChange={cambiarvalor}
             />
             <br/>
-            <button type="submit">Guardar</button>
+            <button type="submit">{productoeditar.id>0? "Editar": "Guardar" }</button>
        </form>
-    )
+    ) 
 }

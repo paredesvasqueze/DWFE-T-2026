@@ -35,6 +35,20 @@ export async function eliminarProductos(id) {
     if (!response.ok) {
         throw new Error("Error al eliminar producto");
     }
-    return await response.json();
-  
+    return await response.json();  
 }
+
+export async function actualizarProductos(id,producto) {
+  const response = await fetch(`${URL_API}/${id}`,{
+    method : "PUT",
+    headers : {
+           "Content-Type": "application/json"
+    },
+    body: JSON.stringify(producto)
+    }) ;
+    if (!response.ok) {
+        throw new Error("Error al actualizar producto");
+    }
+    return await response.json();  
+}
+
