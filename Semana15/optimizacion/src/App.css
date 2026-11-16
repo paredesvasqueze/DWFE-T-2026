@@ -1,0 +1,15 @@
+header,main{
+padding: 20px 15px;
+
+}
+nav a {
+    text-decoration: none;
+    color: black;
+    padding: 10px 15px;
+}
+
+nav a.active {
+    color: white;
+    background-color: blue;
+    border-radius: 5px;
+}
